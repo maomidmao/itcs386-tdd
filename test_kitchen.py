@@ -39,4 +39,8 @@ def test_mixed_addition():
     converter.add_rate("oz", "g", 28)
     total = grams(200).plus(ounces(1))
     assert converter.reduce(total, "g") == grams(228)
-    assert Quantity(201, 'g') == Quantity(228, 'g')
+    
+def test_reduce_ounces_to_grams():
+    converter = Converter()
+    converter.add_rate("oz", "g", 28)
+    assert converter.reduce(ounces(2), "g") == grams(56)
