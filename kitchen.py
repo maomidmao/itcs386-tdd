@@ -12,3 +12,9 @@ class Quantity:
 
     def __repr__(self):
         return f"Quantity({self.amount}, {self.unit!r})"
+    
+def grams(amount):
+    return Quantity(amount, "g")
+
+def ounces(amount):
+    return Quantity(amount, "oz")
