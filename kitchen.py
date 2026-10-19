@@ -46,6 +46,9 @@ class Sum:
         a = self.left.reduce(converter, unit).amount
         b = self.right.reduce(converter, unit).amount
         return Quantity(a + b, unit)    
+    
+    def times(self, multiplier):
+        return Sum(self.left.times(multiplier), self.right.times(multiplier))
 
 def grams(amount):
     return Quantity(amount, "g")
